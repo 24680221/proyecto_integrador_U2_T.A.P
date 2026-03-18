@@ -198,7 +198,196 @@ Esto permite que el framework cargue correctamente las imágenes dentro de la ap
 
 El proyecto fue publicado en internet utilizando la plataforma Netlify. Para ello se creó una página web utilizando HTML, donde se muestra el catálogo de productos.
 
+Codigo de html:
+```
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Store</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #1e1e2f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .descripcion {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .precio {
+            color: green;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .acciones {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        button {
+            border: none;
+            padding: 8px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .fav {
+            background: none;
+            font-size: 20px;
+        }
+
+        .carrito {
+            background: #007bff;
+            color: white;
+        }
+
+        .carrito:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>CATÁLOGO TECNOLÓGICO</header>
+
+<div class="contenedor">
+
+    <!-- Producto 1 -->
+    <div class="card">
+        <img src="laptop.jpg">
+        <h3>Laptop Gamer</h3>
+        <p class="descripcion">Laptop para alto rendimiento</p>
+        <p class="precio">$25000</p>
+
+        <div class="acciones">
+            <button class="fav" onclick="toggleFav(this)">🤍</button>
+            <button class="carrito">🛒 Agregar</button>
+        </div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="card">
+        <img src="mouse.jpg">
+        <h3>Mouse RGB</h3>
+        <p class="descripcion">Mouse gamer con luces</p>
+        <p class="precio">$800</p>
+
+        <div class="acciones">
+            <button class="fav" onclick="toggleFav(this)">🤍</button>
+            <button class="carrito">🛒 Agregar</button>
+        </div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="card">
+        <img src="teclado.jpg">
+        <h3>Teclado Mecánico</h3>
+        <p class="descripcion">Teclado retroiluminado</p>
+        <p class="precio">$1500</p>
+
+        <div class="acciones">
+            <button class="fav" onclick="toggleFav(this)">🤍</button>
+            <button class="carrito">🛒 Agregar</button>
+        </div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="card">
+        <img src="pc.jpg">
+        <h3>Monitor 27"</h3>
+        <p class="descripcion">Monitor Full HD</p>
+        <p class="precio">$4500</p>
+
+        <div class="acciones">
+            <button class="fav" onclick="toggleFav(this)">🤍</button>
+            <button class="carrito">🛒 Agregar</button>
+        </div>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="card">
+        <img src="audifonos.jpg">
+        <h3>Audífonos Gamer</h3>
+        <p class="descripcion">Audio envolvente</p>
+        <p class="precio">$1200</p>
+
+        <div class="acciones">
+            <button class="fav" onclick="toggleFav(this)">🤍</button>
+            <button class="carrito">🛒 Agregar</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleFav(btn) {
+    if (btn.innerText === "🤍") {
+        btn.innerText = "❤️";
+    } else {
+        btn.innerText = "🤍";
+    }
+}
+</script>
+
+</body>
+</html>
+```
+
 Posteriormente los archivos fueron cargados a Netlify, lo que generó un enlace público para acceder al sitio.
+primero se subieron los archivos aqui:
+
+<img width="641" height="259" alt="image" src="https://github.com/user-attachments/assets/23ab4772-0d02-4a95-9ab8-4c4e31037b04" />
+
+y solo se selecciono estos archivos, que son las imagenes y el archivo de html:
+
+<img width="543" height="298" alt="image" src="https://github.com/user-attachments/assets/b8525511-6eac-4d7d-b4c9-86ce88c2edf4" />
+
+y finalmente se cargo en netlify y genero un enlace:
+
+<img width="812" height="284" alt="image" src="https://github.com/user-attachments/assets/4ff9f852-bfb2-4600-9329-496a01b39672" />
 
 Link del proyecto: https://proyectointegradoru2.netlify.app/
 
